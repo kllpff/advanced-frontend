@@ -1,4 +1,6 @@
 :root {
+
+  // fonts
   --font-family-main: "Courier New", "Times New Roman";
 
   --font-size-m: 16px;
@@ -9,4 +11,6 @@
   --font-line-l: 32px;
   --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
 
+  // sizes
+  --navbar-height: 50px;
 }

@@ -3,18 +3,18 @@ import { MainPage } from 'pages/MainPage'
 import { RouteProps } from 'react-router-dom'
 
 export enum AppRouters {
-  MAIN = 'main',
+  HOME = 'home',
   ABOUT = 'about',
 }
 
 export const RoutePath: Record<AppRouters, string> = {
-  [AppRouters.MAIN]: '/',
+  [AppRouters.HOME]: '/',
   [AppRouters.ABOUT]: '/about',
 }
 
 export const RouteConfig: Record<AppRouters, RouteProps> = {
-  [AppRouters.MAIN]: {
-    path: RoutePath.main,
+  [AppRouters.HOME]: {
+    path: RoutePath.home,
     element: <MainPage />,
   },
   [AppRouters.ABOUT]: {
