@@ -13,7 +13,9 @@
     "lint:scss": "npx stylelint \"**/*.scss\"",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
     "jest:init": "jest --init",
-    "unit": "jest --config ./config/jest/jest.config.ts"
+    "unit": "jest --config ./config/jest/jest.config.ts",
+    "analyze:dev": "webpack --env mode=development analyze=true",
+    "analyze:build": "webpack --env mode=production analyze=true"
   },
   "keywords": [],
   "author": "",

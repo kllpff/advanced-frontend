@@ -8,7 +8,9 @@ import { BuildOptions } from './types/config'
 export function buildWebpackConfig(
   options: BuildOptions,
 ): webpack.Configuration {
-  const { paths, mode, isDev }: BuildOptions = options
+  const {
+    paths, mode, isDev,
+  }: BuildOptions = options
 
   return {
     mode,
