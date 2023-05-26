@@ -8,7 +8,6 @@ import { BuildOptions } from './types/config'
 export function buildPlugins({
   paths,
   isDev,
-  analyze,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
   return [
     new HTMLWebpackPlugin({
@@ -24,8 +23,6 @@ export function buildPlugins({
     }),
     new webpack.HotModuleReplacementPlugin(),
     new ReactRefreshWebpackPlugin(),
-    new BundleAnalyzerPlugin({
-      analyzerMode: analyze ? 'server' : 'disabled',
-    }),
+    new BundleAnalyzerPlugin(),
   ]
 }
