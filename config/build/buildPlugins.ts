@@ -23,12 +23,11 @@ export function buildPlugins({
     }),
 
     new ReactRefreshWebpackPlugin(),
-    new BundleAnalyzerPlugin(),
+    new BundleAnalyzerPlugin({ analyzerMode: isDev ? 'server' : 'disabled' }),
   ]
 
   if (isDev) {
     plugins.push(new webpack.HotModuleReplacementPlugin())
-    plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }))
   }
 
   return plugins
