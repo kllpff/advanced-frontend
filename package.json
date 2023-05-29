@@ -16,7 +16,7 @@
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test:ui": "npx loki test",
     "test:ui:ok": "npx loki approve",
-    "test:ui:ci": "concurrently -k \"npm run storybook:build\" \"npm run test:ui\"",
+    "test:ui:ci": "concurrently --kill-others \"storybook dev -p 6006\" \"npx loki test\"",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook"
   },
@@ -95,7 +95,7 @@
     "@storybook/builder-webpack5": "^7.0.17",
     "@storybook/manager-webpack5": "^6.5.16",
     "axios": "^0.26.1",
-    "concurrently": "^7.0.0",
+    "concurrently": "^7.6.0",
     "i": "^0.3.7",
     "i18next": "^21.6.11",
     "i18next-browser-languagedetector": "^6.1.3",
