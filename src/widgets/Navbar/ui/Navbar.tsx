@@ -1,5 +1,3 @@
-/* eslint-disable max-len */
-/* eslint-disable i18next/no-literal-string */
 import { FC, useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames/classNames'
@@ -11,8 +9,7 @@ interface NavbarProps {
   className?: string
 }
 
-export const Navbar: FC<NavbarProps> = (props) => {
-  const { className } = props
+export const Navbar: FC<NavbarProps> = ({ className }: NavbarProps) => {
   const { t } = useTranslation()
 
   const [isAuthModal, setIsAuthModal] = useState(false)
@@ -31,7 +28,8 @@ export const Navbar: FC<NavbarProps> = (props) => {
         {t('Войти')}
       </Button>
       <Modal isOpen={isAuthModal} onClose={onToggleModal}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil molestias itaque vel eveniet cumque voluptate omnis, accusantium, fugiat quas reiciendis aperiam debitis suscipit ea. Maiores aperiam cumque repudiandae consequuntur modi.
+        {/* eslint-disable-next-line */}
+        {t('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam.')}
       </Modal>
     </div>
   )
