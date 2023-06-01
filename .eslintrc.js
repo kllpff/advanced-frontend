@@ -50,10 +50,11 @@ module.exports = {
       },
     ],
     'max-len': ['error', { ignoreComments: true, code: 130 }],
-    'jsx-a11y/click-events-have-key-events': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',
-    'react-hooks/rules-of-hooks': 'error',
+    'jsx-a11y/click-events-have-key-events': 'off',
     'react-hooks/exhaustive-deps': 'error',
+    'react-hooks/rules-of-hooks': 'error',
+    'no-param-reassign': 'off',
   },
   globals: {
     __IS_DEV__: true,
