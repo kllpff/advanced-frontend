@@ -9,5 +9,7 @@
   "Обновить страницу": "Refresh page",
   "Главная": "Home",
   "Переключить": "Switch",
-  "Войти": "Login"
+  "Login": "Login",
+  "type_username": "Type your username",
+  "type_password": "Type your password"
 }
