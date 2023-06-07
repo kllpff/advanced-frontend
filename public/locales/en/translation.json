@@ -9,7 +9,10 @@
   "Обновить страницу": "Refresh page",
   "Главная": "Home",
   "Переключить": "Switch",
-  "Login": "Login",
+  "login": "Login",
   "type_username": "Type your username",
-  "type_password": "Type your password"
+  "type_password": "Type your password",
+  "auth_form_title": "Auth form",
+  "auth_error": "Authorization error!",
+  "logout": "Logout"
 }

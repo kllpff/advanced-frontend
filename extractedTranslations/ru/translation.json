@@ -1,12 +1,16 @@
 {
   "Login": "Login",
+  "Logout": "Logout",
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
     " Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam": {
       "": ""
     }
   },
+  "auth_form_title": "auth_form_title",
   "input_password": "input_password",
   "input_username": "input_username",
+  "login": "login",
+  "logout": "logout",
   "type_password": "type_password",
   "type_username": "type_username",
   "Войти": "Войти",
