@@ -23,6 +23,7 @@ export function buildPlugins({
     }),
 
     new ReactRefreshWebpackPlugin(),
+    // new BundleAnalyzerPlugin({ openAnalyzer: false }),
     new BundleAnalyzerPlugin({ analyzerMode: isDev ? 'server' : 'disabled' }),
   ]
 
