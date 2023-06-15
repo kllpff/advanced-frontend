@@ -5,7 +5,7 @@ import i18n from 'shared/config/i18n/i18n'
 import { USER_LOCALSTORAGE_KEY } from 'shared/const/localstorage'
 
 interface LoginByUsernameProps {
-  username: string,
+  username: string
   password: string
 }
 
@@ -24,7 +24,7 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, {rej
 
       return response.data
     } catch (e) {
-      return thunkAPI.rejectWithValue(i18n.t('auth_error', { ns: 'auth' }))
+      return thunkAPI.rejectWithValue(i18n.t('error', { ns: 'auth' }))
     }
   },
 )
