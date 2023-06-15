@@ -14,5 +14,6 @@
   "type_password": "Введите пароль",
   "auth_form_title": "Форма авторизации",
   "auth_error": "Ошибка авторизации!",
-  "logout": "Выйти"
+  "logout": "Выйти",
+  "profile_page": "Страница профиля"
 }

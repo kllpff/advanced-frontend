@@ -14,5 +14,6 @@
   "type_password": "Type your password",
   "auth_form_title": "Auth form",
   "auth_error": "Authorization error!",
-  "logout": "Logout"
+  "logout": "Logout",
+  "profile_page": "Profile page"
 }

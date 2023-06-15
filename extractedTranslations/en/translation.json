@@ -11,6 +11,7 @@
   "input_username": "input_username",
   "login": "login",
   "logout": "logout",
+  "profile_page": "profile_page",
   "type_password": "type_password",
   "type_username": "type_username",
   "Войти": "Войти",
