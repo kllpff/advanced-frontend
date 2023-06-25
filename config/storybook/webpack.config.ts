@@ -3,7 +3,7 @@ import webpack, { DefinePlugin, RuleSetRule } from 'webpack'
 import { buildCssLoader } from '../build/loaders/buildCssLoader'
 import { BuildPaths } from '../build/types/config'
 
-export default ({ config }: {config: webpack.Configuration}) => {
+export default ({ config }: { config: webpack.Configuration }) => {
   const paths: BuildPaths = {
     html: '',
     build: '',
@@ -11,7 +11,10 @@ export default ({ config }: {config: webpack.Configuration}) => {
     src: path.resolve(__dirname, '..', '..', 'src'),
   }
 
-  config.resolve?.modules?.push(path.relative(__dirname, '../../src'), 'node_modules')
+  config.resolve?.modules?.push(
+    path.relative(__dirname, '../../src'),
+    'node_modules',
+  )
   config.resolve?.extensions?.push('.ts', '.tsx')
 
   // eslint-disable-next-line no-param-reassign
@@ -28,9 +31,12 @@ export default ({ config }: {config: webpack.Configuration}) => {
   })
   config.module?.rules?.push(buildCssLoader(true))
 
-  config.plugins?.push(new DefinePlugin({
-    __IS_DEV__: true,
-  }))
+  config.plugins?.push(
+    new DefinePlugin({
+      __IS_DEV__: JSON.stringify(true),
+      __API__: JSON.stringify(''),
+    }),
+  )
 
   return config
 }
