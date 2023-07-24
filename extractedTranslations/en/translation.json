@@ -13,6 +13,8 @@
   "login": "login",
   "logout": "logout",
   "profile": "profile",
+  "profile_error_text": "profile_error_text",
+  "profile_error_title": "profile_error_title",
   "profile_page": "profile_page",
   "profile_title": "profile_title",
   "type_password": "type_password",
