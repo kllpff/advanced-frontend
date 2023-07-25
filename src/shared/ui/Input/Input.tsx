@@ -6,16 +6,17 @@ import {
   useRef,
   useState,
 } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { Mods, classNames } from 'shared/lib/classNames/classNames'
 import cls from './Input.module.scss'
 
-type HTMLInputProps = Omit< InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
+type HTMLInputProps = Omit< InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
 
 interface InputProps extends HTMLInputProps {
   className?: string
   value?: string
   autofocus?: boolean
   onChange?: (value: string) => void
+  readOnly?: boolean
 }
 
 export const Input = memo((props: InputProps) => {
@@ -26,6 +27,7 @@ export const Input = memo((props: InputProps) => {
     placeholder,
     type = 'text',
     autofocus,
+    readOnly,
     ...otherProps
   } = props
 
@@ -57,6 +59,10 @@ export const Input = memo((props: InputProps) => {
     setCaretPosition(e?.target?.selectionStart || 0)
   }
 
+  const mods: Mods = {
+    [cls.readOnly]: readOnly,
+  }
+
   return (
     <div className={classNames(cls.InputWrapper, {}, [className])}>
       {placeholder && (
@@ -74,6 +80,7 @@ export const Input = memo((props: InputProps) => {
           onBlur={onBlur}
           onChange={onChangeHandler}
           onSelect={onSelect}
+          readOnly
           {...otherProps}
         />
         {isFocused && (
