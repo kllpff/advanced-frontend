@@ -1,21 +1,21 @@
 import {
   ProfileCard,
   fetchProfileData,
-  getProfileData,
   getProfileError,
+  getProfileForm,
   getProfileIsLoading,
-  profileReducer,
   profileActions,
+  profileReducer,
 } from 'entities/Profile'
-import { useEffect, useCallback } from 'react'
+import { useCallback, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { classNames } from 'shared/lib/classNames/classNames'
 import {
   DynamicModuleLoader,
   ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader'
 import { getProfileReadonly } from '../../../entities/Profile/model/selectors/getProfileReadonly/getProfileReadonly'
+import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader'
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -28,7 +28,7 @@ interface ProfilePageProps {
 const ProfilePage = ({ className }: ProfilePageProps) => {
   const dispatch = useDispatch()
 
-  const data = useSelector(getProfileData)
+  const formData = useSelector(getProfileForm)
   const error = useSelector(getProfileError)
   const isLoading = useSelector(getProfileIsLoading)
   const readonly = useSelector(getProfileReadonly)
@@ -50,7 +50,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
       <div className={classNames('', {}, [className])}>
         <ProfilePageHeader />
         <ProfileCard
-          data={data}
+          data={formData}
           isLoading={isLoading}
           error={error}
           onChangeFirstname={onChangeFirstname}
