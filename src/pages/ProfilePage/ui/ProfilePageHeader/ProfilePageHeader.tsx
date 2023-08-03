@@ -39,13 +39,22 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
           {t('edit')}
         </Button>
       ) : (
-        <Button
-          theme={ButtonTheme.OUTLINE}
-          className={cls.editBtn}
-          onClick={onCancelEdit}
-        >
-          {t('cancel')}
-        </Button>
+        <>
+          <Button
+            theme={ButtonTheme.OUTLINE}
+            className={cls.editBtn}
+            onClick={onCancelEdit}
+          >
+            {t('cancel')}
+          </Button>
+          <Button
+            theme={ButtonTheme.OUTLINE}
+            className={cls.editBtn}
+            onClick={onCancelEdit}
+          >
+            {t('save')}
+          </Button>
+        </>
       )}
     </div>
   )
