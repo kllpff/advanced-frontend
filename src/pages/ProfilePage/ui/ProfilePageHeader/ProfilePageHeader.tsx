@@ -41,7 +41,7 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
       ) : (
         <>
           <Button
-            theme={ButtonTheme.OUTLINE}
+            theme={ButtonTheme.OUTLINE_RED}
             className={cls.editBtn}
             onClick={onCancelEdit}
           >
