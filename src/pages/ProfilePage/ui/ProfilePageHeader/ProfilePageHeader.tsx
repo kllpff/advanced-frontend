@@ -1,4 +1,5 @@
 import { profileActions } from 'entities/Profile'
+import { updateProfileData } from 'entities/Profile/model/services/updateProfileData/updateProfileData'
 import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
@@ -27,6 +28,10 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
     dispatch(profileActions.cancelEdit())
   }, [dispatch])
 
+  const onSave = useCallback(() => {
+    dispatch(updateProfileData())
+  }, [dispatch])
+
   return (
     <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
       <Text title={t('profile_title')} />
@@ -42,15 +47,15 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
         <>
           <Button
             theme={ButtonTheme.OUTLINE_RED}
-            className={cls.editBtn}
+            className={cls.cancelBtn}
             onClick={onCancelEdit}
           >
             {t('cancel')}
           </Button>
           <Button
             theme={ButtonTheme.OUTLINE}
-            className={cls.editBtn}
-            onClick={onCancelEdit}
+            className={cls.saveBtn}
+            onClick={onSave}
           >
             {t('save')}
           </Button>

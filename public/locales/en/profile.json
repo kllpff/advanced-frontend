@@ -4,6 +4,8 @@
 	"save": "Save",
 	"your_firstname": "Your first name",
 	"your_lastname": "Your last name",
+	"your_age": "Your age",
+	"your_city": "Your city",
 	"profile_error_title": "Error!",
 	"profile_error_text": "Please refresh page"
 }
