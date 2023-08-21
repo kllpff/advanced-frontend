@@ -9,5 +9,6 @@
 	"your_username": "Your username",
 	"your_avatar": "Your avatar",
 	"profile_error_title": "Error!",
-	"profile_error_text": "Please refresh page"
+	"profile_error_text": "Please refresh page",
+	"currency": "Currency"
 }

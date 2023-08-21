@@ -1,3 +1,4 @@
+import { Currency } from 'entities/Currency'
 import {
   ProfileCard,
   fetchProfileData,
@@ -61,6 +62,10 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     dispatch(profileActions.updateProfile({ avatar: value || '' }))
   }, [dispatch])
 
+  const onChangeCurrency = useCallback((currency?: Currency) => {
+    dispatch(profileActions.updateProfile({ currency }))
+  }, [dispatch])
+
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <div className={classNames('', {}, [className])}>
@@ -75,6 +80,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
           onChangeLastname={onChangeLastname}
           onChangeUsername={onChangeUsername}
           onChangeAvatar={onChangeAvatar}
+          onChangeCurrency={onChangeCurrency}
           readonly={readonly}
         />
       </div>

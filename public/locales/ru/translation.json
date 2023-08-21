@@ -15,5 +15,6 @@
   "auth_form_title": "Форма авторизации",
   "auth_error": "Ошибка авторизации!",
   "logout": "Выйти",
-  "profile_page": "Страница профиля"
+  "profile_page": "Страница профиля",
+  "currency": "Валюта"
 }

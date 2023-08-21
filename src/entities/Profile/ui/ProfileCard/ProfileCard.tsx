@@ -1,4 +1,6 @@
+import { Currency, CurrencySelect } from 'entities/Currency'
 import { useTranslation } from 'react-i18next'
+import { Country } from 'shared/const/common'
 import { Mods, classNames } from 'shared/lib/classNames/classNames'
 import { Avatar } from 'shared/ui/Avatar/Avatar'
 import { Input } from 'shared/ui/Input/Input'
@@ -19,6 +21,8 @@ interface ProfileCardProps {
   onChangeAge?: (value?: string) => void
   onChangeUsername?: (value?: string) => void
   onChangeAvatar?: (value?: string) => void
+  onChangeCurrency?: (currency?: Currency) => void
+  onChangeCountry?: (country?: Country) => void
 }
 
 export const ProfileCard = (props: ProfileCardProps) => {
@@ -34,6 +38,8 @@ export const ProfileCard = (props: ProfileCardProps) => {
     onChangeAge,
     onChangeUsername,
     onChangeAvatar,
+    onChangeCurrency,
+    onChangeCountry,
   } = props
 
   const { t } = useTranslation('profile')
@@ -111,6 +117,12 @@ export const ProfileCard = (props: ProfileCardProps) => {
           onChange={onChangeAvatar}
           placeholder={t('your_avatar')}
           className={cls.input}
+          readonly={readonly}
+        />
+        <CurrencySelect
+          className={cls.input}
+          value={data?.currency}
+          onChange={onChangeCurrency}
           readonly={readonly}
         />
       </div>

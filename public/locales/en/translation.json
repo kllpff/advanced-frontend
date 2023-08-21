@@ -15,5 +15,6 @@
   "auth_form_title": "Auth form",
   "auth_error": "Authorization error!",
   "logout": "Logout",
-  "profile_page": "Profile page"
+  "profile_page": "Profile page",
+  "currency": "Currency"
 }
