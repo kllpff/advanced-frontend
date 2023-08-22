@@ -8,6 +8,7 @@
   },
   "auth_form_title": "auth_form_title",
   "cancel": "cancel",
+  "country": "Страна",
   "currency": "currency",
   "edit": "edit",
   "input_password": "input_password",
@@ -37,6 +38,5 @@
   "Переключить": "Переключить",
   "Произошла непредвиденная ошибка": "Unexpected error",
   "Страница не найдена": "Страница не найдена",
-  "Язык": "Язык",
-  "country": "Страна"
+  "Язык": "Язык"
 }

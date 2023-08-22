@@ -1,4 +1,4 @@
-import { Country } from 'entities/Country'
+import { Country, CountrySelect } from 'entities/Country'
 import { Currency, CurrencySelect } from 'entities/Currency'
 import { useTranslation } from 'react-i18next'
 import { Mods, classNames } from 'shared/lib/classNames/classNames'
@@ -123,6 +123,12 @@ export const ProfileCard = (props: ProfileCardProps) => {
           className={cls.input}
           value={data?.currency}
           onChange={onChangeCurrency}
+          readonly={readonly}
+        />
+        <CountrySelect
+          className={cls.input}
+          value={data?.country}
+          onChange={onChangeCountry}
           readonly={readonly}
         />
       </div>
