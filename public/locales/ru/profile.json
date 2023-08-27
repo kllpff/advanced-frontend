@@ -11,5 +11,10 @@
 	"profile_error_title": "Ошибка!",
 	"profile_error_text": "Обновите страницу",
 	"currency": "Валюта",
-	"country": "Страна"
+	"country": "Страна",
+	"server_error": "Server error!",
+	"no_data": "no_data",
+	"incorrect_user_data": "incorrect_user_data",
+	"incorrect_age": "incorrect_age",
+	"incorrect_country": "incorrect_country"
 }

@@ -1,14 +1,19 @@
-import { Profile } from '../../types/profile'
+import { Profile, validateProfileError } from '../../types/profile'
 
-// eslint-disable-next-line consistent-return
-export const validateProfileData = (profile: Profile) => {
+export const validateProfileData = (profile?: Profile) => {
+  if (!profile) return [validateProfileError.NO_DATA]
+
   const {
     firstname, lastname, age, country,
   } = profile
 
-  if (!firstname || !lastname) return ''
+  const errors: validateProfileError[] = []
 
-  if (!age || !Number.isInteger(age)) return ''
+  if (!firstname || !lastname) errors.push(validateProfileError.INCORRECT_USER_DATA)
 
-  if (!country) return ''
+  if (!age || !Number.isInteger(age)) errors.push(validateProfileError.INCORRECT_AGE)
+
+  if (!country) errors.push(validateProfileError.INCORRECT_COUNTRY)
+
+  return errors
 }

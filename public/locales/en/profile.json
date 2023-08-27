@@ -11,5 +11,10 @@
 	"profile_error_title": "Error!",
 	"profile_error_text": "Please refresh page",
 	"currency": "Currency",
-	"country": "Country"
+	"country": "Country",
+	"server_error": "Server error!",
+	"no_data": "no_data",
+	"incorrect_user_data": "incorrect_user_data",
+	"incorrect_age": "incorrect_age",
+	"incorrect_country": "incorrect_country"
 }
