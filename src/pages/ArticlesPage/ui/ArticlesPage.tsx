@@ -13,8 +13,7 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
 
   return (
     <div className={classNames(cls.articlesPage, {}, [className])}>
-      {/* eslint-disable-next-line i18next/no-literal-string */}
-      <p>Article page</p>
+      {t('article_page')}
     </div>
   )
 }

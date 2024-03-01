@@ -1,20 +1,5 @@
 {
-	"profile_title": "Профиль",
+	"profile": "Профиль",
 	"edit": "Редактировать",
-	"save": "Сохранить",
-	"your_firstname": "Ваше имя",
-	"your_lastname": "Ваша фамилия",
-	"your_age": "Ваш возраст",
-	"your_city": "Ваш город",
-	"your_username": "Ваш юзернейм",
-	"your_avatar": "Ваш аватар",
-	"profile_error_title": "Ошибка!",
-	"profile_error_text": "Обновите страницу",
-	"currency": "Валюта",
-	"country": "Страна",
-	"server_error": "Server error!",
-	"no_data": "no_data",
-	"incorrect_user_data": "incorrect_user_data",
-	"incorrect_age": "incorrect_age",
-	"incorrect_country": "incorrect_country"
+	"cancel": "Отменить"
 }

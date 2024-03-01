@@ -6,11 +6,16 @@
       "": ""
     }
   },
+  "article_details": "article_details",
+  "article_not_found": "article_not_found",
+  "article_page": "article_page",
   "auth_form_title": "auth_form_title",
   "cancel": "cancel",
   "country": "Страна",
   "currency": "currency",
   "edit": "edit",
+  "error": "error",
+  "error_loading": "error_loading",
   "incorrect_age": "incorrect_age",
   "incorrect_country": "incorrect_country",
   "incorrect_user_data": "incorrect_user_data",
