@@ -1,6 +1,6 @@
 {
-  "Login": "Login",
-  "Logout": "Logout",
+  "Login": "Войти",
+  "Logout": "Выйти",
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
     " Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam": {
       "": ""
@@ -19,8 +19,8 @@
   "incorrect_user_data": "incorrect_user_data",
   "input_password": "input_password",
   "input_username": "input_username",
-  "login": "login",
-  "logout": "logout",
+  "login": "Войти",
+  "logout": "Выйти",
   "no_data": "no_data",
   "profile": "profile",
   "profile_error_text": "profile_error_text",
@@ -46,5 +46,5 @@
   "Переключить": "Переключить",
   "Произошла непредвиденная ошибка": "Произошла непредвиденная ошибка",
   "Страница не найдена": "Страница не найдена",
-  "Язык": "Язык"
+  "lang": "ru"
 }
