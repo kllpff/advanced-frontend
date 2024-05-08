@@ -120,14 +120,29 @@
       "avatar": "https://oir.mobi/uploads/posts/2021-03/1616741653_10-p-khaker-krasivo-12.jpg"
     }
   ],
-  "profile": {
-    "first": "jgh",
-    "lastname": "asf",
-    "age": 123,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Moscow",
-    "username": "admin213",
-    "avatar": "https://oir.mobi/uploads/posts/2021-03/1616741653_10-p-khaker-krasivo-12.jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "jgh",
+      "lastname": "asf",
+      "age": 123,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Moscow",
+      "username": "admin213",
+      "avatar": "https://oir.mobi/uploads/posts/2021-03/1616741653_10-p-khaker-krasivo-12.jpg",
+      "firstname": "Tttt"
+    },
+    {
+      "id": "2",
+      "first": "333",
+      "lastname": "222",
+      "age": 123,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "user123",
+      "avatar": "https://oir.mobi/uploads/posts/2021-03/1616741653_10-p-khaker-krasivo-12.jpg"
+    }
+  ]
 }
