@@ -1,9 +1,9 @@
 {
-	"extends": "stylelint-config-standard-scss",
-	"rules": {
-		"indentation": [2],
-		"no-missing-end-of-source-newline": null,
-		"string-quotes": "single",
-		"selector-class-pattern": null
-	}
+  "extends": "stylelint-config-standard-scss",
+  "rules": {
+    "indentation": null,
+    "no-missing-end-of-source-newline": null,
+    "string-quotes": "single",
+    "selector-class-pattern": null
+  }
 }
