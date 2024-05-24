@@ -6,9 +6,11 @@ import { Icon } from 'shared/ui/Icon/Icon'
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg'
 import { useCallback } from 'react'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
+import { useNavigate } from 'react-router-dom'
+import { Card } from 'shared/ui/Card/ui/Card'
 import cls from './ArticleListItem.module.scss'
 import { Article, ArticleView } from '../model/types/article'
-import { useNavigate } from 'react-router-dom'
+import { useHover } from 'shared/lib/hooks/useHover/useHover'
 
 interface ArticleListItemProps {
   className?: string
@@ -18,11 +20,7 @@ interface ArticleListItemProps {
 
 export const ArticleListItem = (props: ArticleListItemProps) => {
   const { className, article, view } = props
-  const navigate = useNavigate()
-
-  const onOpenArticle = useCallback(() => {
-    navigate(RoutePath.article_details + article.id)
-  }, [article.id, navigate])
+  const [isHover, bindHover] = useHover()
 
   if (view === ArticleView.BIG) {
     return (
@@ -34,7 +32,7 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
 
   return (
     <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
-      <div className={cls.card}>
+      <Card className={cls.card}>
         <div className={cls.imageWrapper}>
           <img
             className={cls.img}
@@ -49,7 +47,7 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
           <Icon Svg={EyeIcon} className={cls.icon} />
         </div>
         <Text text={article.title} className={cls.title} />
-      </div>
+      </Card>
     </div>
   )
 }

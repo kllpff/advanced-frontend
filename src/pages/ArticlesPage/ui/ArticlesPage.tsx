@@ -86,7 +86,15 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
 
   return (
     <div className={classNames(cls.articlesPage, {}, [className])}>
-      <ArticleList articles={[article]} />
+      <ArticleList articles={
+        new Array(16)
+        .fill(0)
+        .map((item, index) => ({
+          ...article,
+          id: String(index),
+        }))
+      }
+      />
     </div>
   )
 }

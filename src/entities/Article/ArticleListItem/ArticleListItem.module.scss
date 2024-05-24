@@ -8,11 +8,23 @@
 
 .SMALL {
   width: 230px;
+  cursor: pointer;
+  transition: 0.2s ease;
 
-  .card {
-    padding: 15px;
-    border-radius: 12px;
-    background: var(--card-bg);
+  .date {
+    top: 0;
+    right: 0;
+    display: none;
+    position: absolute;
+  }
+
+  &:hover {
+    opacity: 0.8;
+    transform: scale(1.01);
+
+    .date {
+      display: block;
+    }
   }
 
   .imageWrapper {
@@ -24,12 +36,6 @@
   .img {
     width: 200px;
     height: 200px;
-  }
-
-  .date {
-    top: 0;
-    right: 0;
-    position: absolute;
   }
 
   .infoWrapper {
