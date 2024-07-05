@@ -3,5 +3,7 @@
 	"article_details": "article_details",
 	"article_page": "article_page",
 	"comment": "comment",
-	"no_comments": "no_comments"
+	"no_comments": "no_comments",
+	"read_more": "Read more...",
+	"back": "Back"
 }

@@ -1,9 +1,40 @@
-.ArticleListItem {
-
-}
-
 .BIG {
+  .views {
+    margin-left: auto;
+  }
 
+  .header {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  .date {
+    margin-left: auto;
+  }
+
+  .title {
+    margin-top: 10px;
+  }
+
+  .img {
+    display: block;
+    max-width: 100%;
+    max-height: 250px;
+    margin: 16px auto;
+    object-fit: contain;
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+  }
+
+  .textBlock {
+    max-height: 200px;
+    overflow-y: hidden;
+    margin-bottom: 16px;
+  }
 }
 
 .SMALL {

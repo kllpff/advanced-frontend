@@ -3,6 +3,7 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './ArticleList.module.scss'
 import { Article, ArticleView } from '../model/types/article'
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
+import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
 
 interface ArticleListProps {
   className?: string
@@ -11,20 +12,39 @@ interface ArticleListProps {
   view?: ArticleView
 }
 
+const getSkeletons = (view: ArticleView) => new Array(view === 'SMALL' ? 9 : 3)
+  .fill(0)
+  .map((item, index) => (
+    <ArticleListItemSkeleton key={index} view={view} className={cls.card} />
+  ))
+
 export const ArticleList = (props: ArticleListProps) => {
   const {
     className,
     articles,
-    view = ArticleView.SMALL,
+    view = 'BIG',
     isLoading,
   } = props
 
+  if (isLoading) {
+    return (
+      <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+        {getSkeletons(view)}
+      </div>
+    )
+  }
+
   const renderArticle = (article: Article) => (
-    <ArticleListItem article={article} view={view} />
+    <ArticleListItem
+      key={article.id}
+      article={article}
+      view={view}
+      className={cls.card}
+    />
   )
 
   return (
-    <div className={classNames(cls.ArticleList, {}, [className])}>
+    <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
       {articles.length > 0
         ? articles.map(renderArticle)
         : null}

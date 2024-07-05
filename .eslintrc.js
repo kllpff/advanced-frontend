@@ -50,6 +50,7 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'no-param-reassign': 'off',
     'no-undef': 'off',
+    'react/no-array-index-key': 'warn',
   },
   globals: {
     __IS_DEV__: true,

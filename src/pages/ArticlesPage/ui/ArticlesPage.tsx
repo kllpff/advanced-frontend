@@ -1,7 +1,7 @@
 import { FC, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames/classNames'
-import { Article, ArticleList } from 'entities/Article'
+import { Article, ArticleList, ArticleView } from 'entities/Article'
 import cls from './ArticlesPage.module.scss'
 
 interface ArticlesPageProps {
@@ -15,6 +15,11 @@ const article = {
   img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
   views: 1022,
   createdAt: '26.02.2022',
+  user: {
+    id: '1',
+    username: 'admin',
+    avatar: 'https://oir.mobi/uploads/posts/2021-03/1616741653_10-p-khaker-krasivo-12.jpg',
+  },
   type: [
     'IT',
   ],
@@ -84,16 +89,20 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
   const { className } = props
   const { t } = useTranslation('article')
 
+  const bigView = 'BIG'
+
   return (
     <div className={classNames(cls.articlesPage, {}, [className])}>
-      <ArticleList articles={
-        new Array(16)
-        .fill(0)
-        .map((item, index) => ({
-          ...article,
-          id: String(index),
-        }))
-      }
+      <ArticleList
+        view="BIG"
+        articles={
+          new Array(16)
+            .fill(0)
+            .map((item, index) => ({
+              ...article,
+              id: String(index),
+            }))
+        }
       />
     </div>
   )
