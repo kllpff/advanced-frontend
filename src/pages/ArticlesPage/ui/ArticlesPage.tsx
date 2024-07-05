@@ -6,6 +6,7 @@ import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/Dynamic
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useSelector } from 'react-redux'
+import { Page } from 'shared/ui/Page/ui/Page'
 import cls from './ArticlesPage.module.scss'
 import { articlePageActions, articlePageReducer, getArticles } from '../model/slices/ArticlePageSlice'
 import { fetchArticlesList } from '../model/services/fetchArticlesList/fetchArticlesList'
@@ -33,13 +34,15 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
   }, [dispatch])
 
   useInitialEffect(() => {
-    dispatch(fetchArticlesList())
     dispatch(articlePageActions.initState())
+    dispatch(fetchArticlesList({
+      page: 1,
+    }))
   })
 
   return (
     <DynamicModuleLoader reducers={reduces}>
-      <div className={classNames(cls.articlesPage, {}, [className])}>
+      <Page className={classNames(cls.articlesPage, {}, [className])}>
         <ArticleViewSelector
           view={view}
           onViewClick={onChangeView}
@@ -49,7 +52,7 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
           isLoading={isLoading}
           articles={articles}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   )
 }
