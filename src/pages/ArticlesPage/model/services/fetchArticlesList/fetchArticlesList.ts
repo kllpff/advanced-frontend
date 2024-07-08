@@ -1,35 +1,40 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfig } from 'app/providers/StoreProvider'
+import { Comment } from 'entities/Comment'
 import { Article } from 'entities/Article'
-import i18n from 'shared/config/i18n/i18n'
-import { getArticlesPageLimit } from '../../selectors/articlesPageSelectors'
+import { getArticlesPageLimit } from 'pages/ArticlesPage/model/selectors/articlesPageSelectors'
 
 interface FetchArticlesListProps {
-  page?: number
-
+    page?: number;
 }
 
 export const fetchArticlesList = createAsyncThunk<
-  Article[],
-  FetchArticlesListProps,
-  ThunkConfig<string>
->('articlesPage/fetchArticlesList', async (props, thunkApi) => {
-  const { extra, rejectWithValue, getState } = thunkApi
-  const { page = 1 } = props
-  const limit = getArticlesPageLimit(getState())
-  try {
-    const response = await extra.api.get<Article[]>('/articles', {
-      params: {
-        _expand: 'user',
-        _limit: limit,
-        _page: page,
+    Article[],
+    FetchArticlesListProps,
+    ThunkConfig<string>
+    >(
+      'articlesPage/fetchArticlesList',
+      async (props, thunkApi) => {
+        const { extra, rejectWithValue, getState } = thunkApi
+        const { page = 1 } = props
+        const limit = getArticlesPageLimit(getState())
+
+        try {
+          const response = await extra.api.get<Article[]>('/articles', {
+            params: {
+              _expand: 'user',
+              _limit: limit,
+              _page: page,
+            },
+          })
+
+          if (!response.data) {
+            throw new Error()
+          }
+
+          return response.data
+        } catch (e) {
+          return rejectWithValue('error')
+        }
       },
-    })
-
-    if (!response.data) throw new Error()
-
-    return response.data
-  } catch (e) {
-    return rejectWithValue(i18n.t('error', { ns: 'auth' }))
-  }
-})
+    )

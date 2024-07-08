@@ -11,11 +11,12 @@ import { useSelector } from 'react-redux'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { fetchCommentsByArticleId } from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { Button, ButtonTheme } from 'shared/ui/Button/Button'
+import { RoutePath } from 'shared/config/routeConfig/routeConfig'
+import { Page } from 'shared/ui/Page/ui/Page'
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments'
 import cls from './ArticleDetailsPage.module.scss'
 import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slices/articleDetailsCommentsSlice'
-import { Button, ButtonTheme } from 'shared/ui/Button/Button'
-import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 
 interface ArticleDetailsPageProps {
    className?: string
@@ -44,15 +45,15 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 
   if (!id) {
     return (
-      <div className={classNames(cls.articleDetailsPage, {}, [className])}>
+      <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
         {t('article_not_found')}
-      </div>
+      </Page>
     )
   }
 
   return (
     <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
-      <div className={classNames(cls.articleDetailsPage, {}, [className])}>
+      <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
         <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
           {t('back')}
         </Button>
@@ -62,7 +63,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
           isLoading={commentsIsLoading}
           comments={comments}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   )
 }
