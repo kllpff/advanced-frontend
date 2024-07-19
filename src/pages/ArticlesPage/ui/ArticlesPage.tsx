@@ -6,7 +6,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { useSelector } from 'react-redux'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { fetchNextArticlesPage } from 'pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage'
-import { Page } from 'shared/ui/Page/ui/Page'
+import { Page } from 'widgets/Page/ui/Page'
 import cls from './ArticlesPage.module.scss'
 import {
   articlePageActions, articlePageReducer, getArticles,

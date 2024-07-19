@@ -14,17 +14,20 @@ import { NavigateOptions, To } from 'react-router-dom'
 import { Article, ArticleDetailsSchema } from 'entities/Article'
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage'
 import { ArticlesPageSchema } from 'pages/ArticlesPage'
+import { AddCommentFormSchema } from 'features/addCommentForm'
+import { UISchema } from 'features/UI/model/types/UISchema'
 
 export interface StateSchema {
   counter: CounterSchema
   user: UserSchema
+  ui: UISchema
 
   // async reducers
   loginForm?: LoginSchema
   profile?: ProfileSchema
   articleDetails?: ArticleDetailsSchema
   articleDetailsComments?: ArticleDetailsCommentsSchema
-  // addCommentForm?: AddCommmentFormSchema
+  addCommentForm?: AddCommentFormSchema
   articlesPage?: ArticlesPageSchema
 }
 

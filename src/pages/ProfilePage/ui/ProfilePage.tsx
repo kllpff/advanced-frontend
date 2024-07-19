@@ -22,7 +22,7 @@ import {
 import { Text, TextTheme } from 'shared/ui/Text/Text'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { useParams } from 'react-router-dom'
-import { Page } from 'shared/ui/Page/ui/Page'
+import { Page } from 'widgets/Page/ui/Page'
 import { getProfileReadonly } from '../../../entities/Profile/model/selectors/getProfileReadonly/getProfileReadonly'
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader'
 

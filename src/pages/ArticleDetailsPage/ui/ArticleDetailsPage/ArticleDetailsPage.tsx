@@ -13,7 +13,7 @@ import { fetchCommentsByArticleId } from 'pages/ArticleDetailsPage/model/service
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
-import { Page } from 'shared/ui/Page/ui/Page'
+import { Page } from 'widgets/Page/ui/Page'
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments'
 import cls from './ArticleDetailsPage.module.scss'
 import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slices/articleDetailsCommentsSlice'
