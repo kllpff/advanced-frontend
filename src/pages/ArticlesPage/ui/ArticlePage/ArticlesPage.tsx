@@ -7,14 +7,11 @@ import { useSelector } from 'react-redux'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { fetchNextArticlesPage } from 'pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage'
 import { Page } from 'widgets/Page/ui/Page'
+import { articlePageActions, articlePageReducer, getArticles } from 'pages/ArticlesPage/model/slices/ArticlePageSlice'
+import { getArticlesPageIsLoading, getArticlesPageView } from 'pages/ArticlesPage/model/selectors/articlesPageSelectors'
+import { initArticlesPage } from 'pages/ArticlesPage/model/services/initArticlesPage/initArticlesPage'
 import cls from './ArticlesPage.module.scss'
-import {
-  articlePageActions, articlePageReducer, getArticles,
-} from '../model/slices/ArticlePageSlice'
-import {
-  getArticlesPageIsLoading, getArticlesPageView,
-} from '../model/selectors/articlesPageSelectors'
-import { initArticlesPage } from '../model/services/initArticlesPage/initArticlesPage'
+import { ArticlePageFilters } from '../ArticlePageFilters/ArticlePageFilters'
 
 interface ArticlesPageProps {
     className?: string;
@@ -31,10 +28,6 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   const isLoading = useSelector(getArticlesPageIsLoading)
   const view = useSelector(getArticlesPageView)
 
-  const onChangeView = useCallback((view: ArticleView) => {
-    dispatch(articlePageActions.setView(view))
-  }, [dispatch])
-
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextArticlesPage())
   }, [dispatch])
@@ -49,11 +42,12 @@ const ArticlesPage = (props: ArticlesPageProps) => {
         onScrollEnd={isLoading ? undefined : onLoadNextPart}
         className={classNames(cls.ArticlesPage, {}, [className])}
       >
-        <ArticleViewSelector view={view} onViewClick={onChangeView} />
+        <ArticlePageFilters />
         <ArticleList
           isLoading={isLoading}
           view={view}
           articles={articles}
+          className={cls.list}
         />
       </Page>
     </DynamicModuleLoader>

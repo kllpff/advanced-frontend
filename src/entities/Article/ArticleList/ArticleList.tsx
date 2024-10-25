@@ -22,7 +22,7 @@ export const ArticleList = (props: ArticleListProps) => {
   const {
     className,
     articles,
-    view = 'BIG',
+    view = ArticleView.BIG,
     isLoading,
   } = props
 
